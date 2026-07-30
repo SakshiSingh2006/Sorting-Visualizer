@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+
+        <!-- ===================== HEADER ===================== -->
+
+        <header>
+            <h1>Sorting Algorithm Visualizer</h1>
+        </header>
+
+        <!-- ===================== CONTROL PANEL ===================== -->
+
+        <section class="controls">
+
+            <div class="control-group">
+
+                <label>Choose Algorithm</label>
+
+                <select id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="quick">Quick Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="heap">Heap Sort</option>
+                    <option value="shell">Shell Sort</option>
+                    <option value="bucket">Bucket Sort</option>
+                    <option value="radix">Radix Sort</option>
+                </select>
+
+            </div>
+
+            <div class="control-group">
+
+                <label>Array Size</label>
+
+                <input
+                    type="range"
+                    id="arraySize"
+                    min="10"
+                    max="100"
+                    value="40">
+
+                <span id="arraySizeValue">40</span>
+
+            </div>
+
+            <div class="control-group">
+
+                <label>Speed</label>
+
+                <input
+                    type="range"
+                    id="speed"
+                    min="1"
+                    max="100"
+                    value="50">
+
+                <span id="speedValue">50</span>
+
+            </div>
+
+            <div class="button-group">
+
+                <button id="generateBtn">
+                    Generate New Array
+                </button>
+
+                <button id="resetBtn">
+                    Reset Array
+                </button>
+
+                <button id="startBtn">
+                    Start Sorting
+                </button>
+
+                <button id="pauseBtn">
+                    Pause
+                </button>
+
+                <button id="resumeBtn">
+                    Resume
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ===================== STATISTICS ===================== -->
+
+        <section class="stats">
+
+            <div class="card">
+                <h3>Algorithm</h3>
+                <p id="algorithmName">Bubble Sort</p>
+            </div>
+
+            <div class="card">
+                <h3>Comparisons</h3>
+                <p id="comparisons">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Swaps</h3>
+                <p id="swaps">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Execution Time</h3>
+                <p id="time">0 ms</p>
+            </div>
+
+        </section>
+
+        <!-- ===================== VISUALIZER ===================== -->
+
+        <section id="visualizer">
+
+            <!-- Bars will be created using JavaScript -->
+
+        </section>
+
+        <!-- ===================== FOOTER ===================== -->
+
+    </div>
+
+    <script src="sorting.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

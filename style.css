@@ -1,0 +1,417 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+    background:#0f172a;
+}
+
+/* ===========================
+   ANIMATED BACKGROUND
+=========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:linear-gradient(
+        -45deg,
+        #1e3c72,
+        #2a5298,
+        #6a11cb,
+        #2575fc
+    );
+    background-size:400% 400%;
+    animation:gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* ===========================
+   PAGE FADE
+=========================== */
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+    padding:30px 0;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+header h1{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+header p{
+    color:#dddddd;
+    font-size:18px;
+}
+
+/* ===========================
+   GLASS PANEL
+=========================== */
+
+.controls{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
+    animation:slideUp .8s ease;
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.control-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width:180px;
+}
+
+.control-group label{
+    font-weight:600;
+}
+
+.control-group select,
+.control-group input{
+    width:100%;
+}
+
+/* ===========================
+   SELECT
+=========================== */
+
+select{
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+/* ===========================
+   RANGE
+=========================== */
+
+input[type="range"]{
+    cursor:pointer;
+}
+
+.control-group span{
+    font-size:14px;
+    color:#e7e7e7;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.button-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+}
+
+button{
+    border:none;
+    padding:12px 18px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    color:white;
+    background:#2563eb;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+button:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 0 15px #3b82f6,
+        0 0 30px #3b82f6;
+}
+
+button:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
+    animation:slideUp .8s ease;
+}
+
+.card:hover{
+    transform:scale(1.04);
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+.card p{
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* Used by JavaScript */
+.card.animate{
+    animation:pop .4s;
+}
+
+@keyframes pop{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* ===========================
+   VISUALIZER
+=========================== */
+
+#visualizer{
+    height:500px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:20px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:3px;
+    overflow:hidden;
+}
+
+/* ===========================
+   BARS
+=========================== */
+
+.bar{
+    flex:1;
+    background:#3b82f6;
+    border-radius:6px 6px 0 0;
+    transition:
+        height .3s,
+        background .3s,
+        transform .3s;
+    animation:grow .6s;
+}
+
+@keyframes grow{
+    from{
+        height:0;
+    }
+}
+
+/* ===========================
+   BAR COLORS
+=========================== */
+
+.bar.compare{
+    background:#facc15;
+    animation:pulse .6s infinite;
+}
+
+.bar.swap{
+    background:#ef4444;
+    animation:shake .3s;
+}
+
+.bar.minimum{
+    background:#fb923c;
+}
+
+.bar.pivot{
+    background:#9333ea;
+    box-shadow:
+        0 0 15px #9333ea,
+        0 0 30px #9333ea;
+}
+
+.bar.sorted{
+    background:#22c55e;
+}
+
+/* ===========================
+   BAR ANIMATIONS
+=========================== */
+
+@keyframes pulse{
+
+    0%{
+        transform:scaleY(1);
+    }
+
+    50%{
+        transform:scaleY(1.05);
+    }
+
+    100%{
+        transform:scaleY(1);
+    }
+
+}
+
+@keyframes shake{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-2px);
+    }
+
+    50%{
+        transform:translateX(2px);
+    }
+
+    75%{
+        transform:translateX(-2px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    margin-top:35px;
+    text-align:center;
+    color:#e2e8f0;
+    animation:fadeFooter 2s;
+}
+
+@keyframes fadeFooter{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:32px;
+    }
+
+    .controls{
+        flex-direction:column;
+    }
+
+    .button-group{
+        width:100%;
+        justify-content:center;
+    }
+
+    #visualizer{
+        height:350px;
+    }
+
+}
